@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tuesday Burger Deal — Betelgeuse Betelgeuse</title>
+<meta name="description" content="Two burgers and two tall boys for $20, every Tuesday at Betelgeuse Betelgeuse on Washington Ave. Dine in only.">
+<meta name="theme-color" content="#2F639F">
+<meta property="og:title" content="Tuesday Burger Deal — Betelgeuse Betelgeuse">
+<meta property="og:description" content="Two burgers and two tall boys for $20, every Tuesday on Washington Ave. Dine in only.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tuesday.betelgeusehou.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;700&display=swap">
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: #FAF6EF; color: #2B2B2B;
+    font-family: 'Asap','Helvetica Neue',Helvetica,Arial,sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  .card { max-width: 600px; margin: 0 auto; background: #FFFFFF; min-height: 100vh; }
+  .bar { background: #2F639F; padding: 20px 16px; text-align: center; }
+  .bar img { display: inline-block; width: 240px; max-width: 78%; height: auto; border: 0; }
+  .pad { padding: 30px 24px 40px; }
+  h1 { font-size: 24px; line-height: 1.25; color: #2F639F; margin: 0 0 18px; font-weight: 700; }
+  p { font-size: 17px; line-height: 1.55; margin: 0 0 18px; }
+  .hl { color: #2F639F; font-weight: 700; }
+  a { color: #2F639F; font-weight: 700; }
+  .opt { margin-bottom: 14px; }
+  button.share {
+    display: block; width: 100%; text-align: center; font-size: 17px; font-weight: 700;
+    padding: 18px 20px; border: 2px solid #E8421E; cursor: pointer;
+    font-family: inherit; border-radius: 0; -webkit-tap-highlight-color: transparent;
+    transition: transform .08s ease, opacity .12s ease;
+  }
+  button.share:active { transform: scale(.985); }
+  .primary { background: #E8421E; color: #FFFFFF; }
+  .secondary { background: #FFFFFF; color: #E8421E; }
+  .panel { margin-top: 10px; padding: 14px 16px; background: #F1EFE8; font-size: 15px; line-height: 1.5; }
+  .panel .lab { font-size: 13px; color: #5F5E5A; margin: 0 0 8px; }
+  .panel .txt { margin: 0; }
+  .panel .copy {
+    background: none; border: none; padding: 0; margin: 12px 0 0; cursor: pointer;
+    color: #2F639F; font-weight: 700; font-size: 15px; font-family: inherit; text-decoration: underline;
+  }
+  .foot { border-top: 1px solid #E6E1D8; margin-top: 30px; padding-top: 20px; }
+  .foot p { font-size: 13px; line-height: 1.7; margin: 0 0 10px; }
+  .foot strong { color: #2F639F; }
+  .hh { font-size: 14px; color: #5A5A5A; }
+  @media (max-width: 620px) { .pad { padding: 22px 22px 34px; } h1 { font-size: 22px; } p { font-size: 16px; } }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="bar">
+    <a href="https://betelgeusehou.com"><img
+      src="https://d3k81ch9hvuctc.cloudfront.net/company/YAYzBx/images/37de632b-99cd-4784-9f68-3992d400c776.png"
+      alt="Betelgeuse Betelgeuse" width="240"></a>
+  </div>
+
+  <div class="pad">
+    <h1>A Burger in a Pizza Oven</h1>
+
+    <p>Ketchup, mustard, pickles, white onions, American cheese. Cooked, yes, in the pizza oven.</p>
+
+    <p>Every Tuesday on <a href="https://google.com/maps/place?q=Betelgeuse+Betelgeuse%2C+2101+Washington+Ave%2C+Houston%2C+TX+77007">Washington Ave</a>, two of them and two tall boys go for <span class="hl">$20</span>. PBR, Lone Star, or Montucky Cold Snacks.</p>
+
+    <p><span class="hl">Dine in only.</span> Doors at 4, happy hour runs 4 to 6, kitchen goes till 11.</p>
+
+    <p>Two burgers means you're bringing somebody. Pick a side and we'll write the text.</p>
+
+    <div class="opt">
+      <button class="share primary" data-msg="You owe me a burger. Betelgeuse on Washington Ave, Tuesday: two burgers and two tall boys for $20. tuesday.betelgeusehou.com">They owe you a burger</button>
+      <div class="slot"></div>
+    </div>
+
+    <div class="opt">
+      <button class="share secondary" data-msg="Next burger and beer is on me. Betelgeuse on Washington Ave, Tuesday: two burgers and two tall boys for $20. tuesday.betelgeusehou.com">This one's on you</button>
+      <div class="slot"></div>
+    </div>
+
+    <div class="foot">
+      <p class="hh">Happy hour 4 to 6 daily, both stores.</p>
+      <p><strong>Montrose</strong><br>4500 Montrose Blvd, Houston, TX 77006</p>
+      <p><strong>Washington</strong><br>2101 Washington Ave, Houston, TX 77007</p>
+      <p>713.640.5220 &middot; <a href="https://betelgeusehou.com">betelgeusehou.com</a></p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  function panel(slot, text) {
+    if (slot.firstChild) return;                 // already open, leave it
+    var box = document.createElement('div');
+    box.className = 'panel';
+
+    var lab = document.createElement('p');
+    lab.className = 'lab';
+    lab.textContent = 'Send them this:';
+
+    var txt = document.createElement('p');
+    txt.className = 'txt';
+    txt.textContent = text;
+
+    var copy = document.createElement('button');
+    copy.className = 'copy';
+    copy.type = 'button';
+    copy.textContent = 'Copy the message';
+    copy.addEventListener('click', function () {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function () { copy.textContent = 'Copied'; },
+          function () { selectNode(txt); }
+        );
+      } else {
+        selectNode(txt);
+      }
+    });
+
+    box.appendChild(lab);
+    box.appendChild(txt);
+    box.appendChild(copy);
+    slot.appendChild(box);
+  }
+
+  function selectNode(node) {
+    try {
+      var r = document.createRange();
+      r.selectNodeContents(node);
+      var s = window.getSelection();
+      s.removeAllRanges();
+      s.addRange(r);
+    } catch (e) {}
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll('button.share'), function (btn) {
+    var slot = btn.parentNode.querySelector('.slot');
+
+    btn.addEventListener('click', function () {
+      var text = btn.getAttribute('data-msg');
+
+      // 1. Native share sheet. A user who opens it and backs out gets
+      //    AbortError — that is a cancel, not a failure, so do nothing.
+      if (navigator.share) {
+        navigator.share({ text: text }).catch(function (err) {
+          if (err && (err.name === 'AbortError' || err.name === 'NotAllowedError')) return;
+          panel(slot, text);
+        });
+        return;
+      }
+
+      // 2. Older mobile browsers: hand off to the SMS app. Only fall back to
+      //    the copy panel if the page is still visible a beat later, which
+      //    means the handoff never happened.
+      if (isMobile) {
+        var sep = /iPhone|iPad|iPod/i.test(navigator.userAgent) ? '&' : '?';
+        window.location.href = 'sms:' + sep + 'body=' + encodeURIComponent(text);
+        window.setTimeout(function () {
+          if (document.visibilityState === 'visible') panel(slot, text);
+        }, 1200);
+        return;
+      }
+
+      // 3. Desktop: show it to copy.
+      panel(slot, text);
+    });
+  });
+})();
+</script>
+</body>
+</html>

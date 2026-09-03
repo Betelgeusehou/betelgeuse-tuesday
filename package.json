@@ -1,0 +1,15 @@
+{
+  "name": "betelgeuse-tuesday",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tuesday burger deal share page for tuesday.betelgeusehou.com",
+  "scripts": {
+    "start": "serve . --listen $PORT --single --no-clipboard"
+  },
+  "dependencies": {
+    "serve": "14.2.4"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
