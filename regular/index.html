@@ -2,102 +2,279 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Regular Appreciation Week — Betelgeuse Betelgeuse</title>
-<meta name="description" content="$5 espresso martini Monday, $6 Pickletini Tuesday, $6 Black Lemon Drop Wednesday, half-price frozen drinks Thursday. Both Betelgeuse Betelgeuse bars, through Nov 25. Loyalty members only.">
-<meta name="theme-color" content="#2F639F">
-<meta property="og:title" content="Regular Appreciation Week — Betelgeuse Betelgeuse">
-<meta property="og:description" content="Members-only drink deals at both bars, through Nov 25. Text JOIN to become a regular.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Regular Appreciation Week · Betelgeuse Betelgeuse</title>
+<meta name="description" content="Nov 4 through Nov 25 at Betelgeuse Betelgeuse. $5 espresso martini Monday, $6 Pickletini Tuesday, $6 Black Lemon Drop Wednesday, half-price frozen drinks Thursday, double loyalty points every day. Loyalty members only.">
+<meta name="theme-color" content="#16294A">
+<meta property="og:title" content="Regular Appreciation Week · Betelgeuse Betelgeuse">
+<meta property="og:description" content="You're a regular now. Members-only deals at both bars, Nov 4 through Nov 25. Text JOIN to get in.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://regular.betelgeusehou.com">
+<meta property="og:url" content="https://tuesday.betelgeusehou.com/regular/">
+<meta property="og:image" content="https://tuesday.betelgeusehou.com/regular/img/hero_TUE.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;0,600;0,800;1,800&display=swap">
 <style>
-  :root { color-scheme: light; }
+  :root {
+    color-scheme: light;
+    --blue: #2F639F;
+    --navy: #16294A;
+    --red: #E8421E;
+    --cream: #FAF6EF;
+    --ink: #2B2B2B;
+    --muted: #5A5A5A;
+    --line: #E6E1D8;
+  }
   * { box-sizing: border-box; }
+  html, body { overflow-x: hidden; }
   body {
-    margin: 0; background: #FAF6EF; color: #2B2B2B;
+    margin: 0; background: var(--cream); color: var(--ink);
     font-family: 'Asap','Helvetica Neue',Helvetica,Arial,sans-serif;
     -webkit-text-size-adjust: 100%;
   }
-  .card { max-width: 600px; margin: 0 auto; background: #FFFFFF; min-height: 100vh; }
-  .bar { background: #2F639F; padding: 20px 16px; text-align: center; }
-  .bar img { display: inline-block; width: 240px; max-width: 78%; height: auto; border: 0; }
-  .pad { padding: 30px 24px 40px; }
-  h1 { font-size: 24px; line-height: 1.25; color: #2F639F; margin: 0 0 18px; font-weight: 700; }
-  p { font-size: 17px; line-height: 1.55; margin: 0 0 18px; }
-  .hl { color: #2F639F; font-weight: 700; }
-  a { color: #2F639F; font-weight: 700; }
-  .deals { list-style: none; margin: 0 0 24px; padding: 0; border-top: 1px solid #E6E1D8; }
-  .deals li { display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
-    padding: 14px 0; border-bottom: 1px solid #E6E1D8; font-size: 17px; line-height: 1.4; }
-  .deals .day { color: #2F639F; font-weight: 700; flex: 0 0 auto; }
-  .deals .what { text-align: right; }
-  .deals .price { color: #E8421E; font-weight: 700; }
-  .join {
-    display: block; width: 100%; text-align: center; font-size: 19px; font-weight: 700;
-    padding: 20px 20px; border: 2px solid #E8421E; cursor: pointer; text-decoration: none;
-    font-family: inherit; border-radius: 0; -webkit-tap-highlight-color: transparent;
-    background: #E8421E; color: #FFFFFF;
-    transition: transform .08s ease, opacity .12s ease;
+  img { max-width: 100%; display: block; }
+  .wrap { max-width: 560px; margin: 0 auto; background: #fff; min-height: 100vh; }
+
+  /* ---------- hero: night sky ---------- */
+  .sky {
+    position: relative; overflow: hidden; text-align: center; color: #fff;
+    background: radial-gradient(120% 90% at 50% 0%, #2F639F 0%, var(--navy) 62%);
+    padding: 22px 16px 34px;
   }
-  .join:active { transform: scale(.985); }
-  .small { font-size: 14px; color: #5A5A5A; text-align: center; margin: 12px 0 0; }
-  .panel { margin-top: 10px; padding: 14px 16px; background: #F1EFE8; font-size: 15px; line-height: 1.5; }
+  .sky .logo { position: relative; z-index: 2; display: inline-block; }
+  .sky .logo img { width: 200px; max-width: 64vw; height: auto; margin: 0 auto; }
+  .stars { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+  .star {
+    position: absolute; color: #fff; line-height: 1; opacity: 0;
+    animation: drift linear infinite, twinkle ease-in-out infinite alternate;
+  }
+  .star.r { color: #FF8A6B; }
+  @keyframes drift {
+    from { transform: translate3d(0, 0, 0) rotate(0deg); }
+    to   { transform: translate3d(-40px, 60px, 0) rotate(160deg); }
+  }
+  @keyframes twinkle { from { opacity: .15; } to { opacity: .9; } }
+
+  .badge-wrap { position: relative; z-index: 2; width: 150px; height: 150px; margin: 18px auto 6px; }
+  .badge { width: 100%; height: 100%; animation: stamp .7s cubic-bezier(.2,1.6,.4,1) .2s both; }
+  .badge .ring { transform-origin: 75px 75px; animation: spin 18s linear infinite; }
+  .badge-wrap:active .badge { transform: scale(.94); }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes stamp {
+    from { transform: scale(2.2) rotate(-25deg); opacity: 0; }
+    to   { transform: scale(1) rotate(-8deg); opacity: 1; }
+  }
+
+  .kicker {
+    position: relative; z-index: 2; display: inline-block; margin: 6px 0 10px;
+    font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+    color: #FFD9CC;
+  }
+  h1 {
+    position: relative; z-index: 2; margin: 0 auto; max-width: 11em;
+    font-size: 40px; line-height: 1.02; font-weight: 800; font-style: italic; letter-spacing: -.01em;
+  }
+  .sub { position: relative; z-index: 2; margin: 12px auto 0; font-size: 16px; color: #D7E3F4; max-width: 17em; }
+  .check {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 12px; z-index: 2;
+    background:
+      linear-gradient(45deg, var(--red) 25%, transparent 25%, transparent 75%, var(--red) 75%),
+      linear-gradient(45deg, var(--red) 25%, #fff 25%, #fff 75%, var(--red) 75%);
+    background-size: 12px 12px; background-position: 0 0, 6px 6px;
+  }
+
+  /* ---------- body ---------- */
+  .pad { padding: 26px 16px 36px; }
+  .lead { font-size: 19px; line-height: 1.5; margin: 0 0 22px; font-weight: 600; }
+  .lead .hey { color: var(--red); font-weight: 800; }
+
+  .days { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 0 0 14px; padding: 0; list-style: none; }
+  .day { background: var(--cream); border: 2px solid var(--navy); overflow: hidden; display: flex; flex-direction: column; }
+  .photo { position: relative; aspect-ratio: 4 / 5; background: var(--navy); }
+  .photo img { width: 100%; height: 100%; object-fit: cover; }
+  .tag {
+    position: absolute; top: 8px; left: 8px; background: var(--red); color: #fff;
+    font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+    padding: 5px 8px 4px; transform: rotate(-3deg);
+  }
+  .deal { padding: 10px 10px 12px; }
+  .price { display: block; font-size: 26px; line-height: 1; font-weight: 800; color: var(--blue); }
+  .price.word { font-size: 21px; }
+  .what { display: block; font-size: 15px; line-height: 1.3; margin-top: 4px; font-weight: 600; }
+  .plus { display: block; font-size: 13px; line-height: 1.35; margin-top: 8px; padding-top: 8px; border-top: 1px dashed #BFB7A8; color: var(--ink); }
+  .plus b { color: var(--red); }
+
+  .every {
+    display: flex; align-items: center; gap: 12px; margin: 0 0 22px; padding: 14px 16px;
+    background: var(--navy); color: #fff;
+  }
+  .every .x2 { flex: 0 0 auto; font-size: 30px; font-weight: 800; font-style: italic; color: #FFB199; line-height: 1; }
+  .every .t { font-size: 15px; line-height: 1.35; }
+  .every .t b { display: block; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #C9D8EE; }
+
+  .fine { font-size: 14px; line-height: 1.5; color: var(--muted); margin: 0 0 22px; }
+
+  .join {
+    display: block; width: 100%; text-align: center; font-size: 20px; font-weight: 800;
+    padding: 20px 18px; border: 0; cursor: pointer; text-decoration: none;
+    font-family: inherit; border-radius: 0; -webkit-tap-highlight-color: transparent;
+    background: var(--red); color: #FFFFFF; box-shadow: 0 5px 0 var(--navy);
+    transition: transform .08s ease, box-shadow .08s ease;
+  }
+  .join:active { transform: translateY(4px); box-shadow: 0 1px 0 var(--navy); }
+  .small { font-size: 14px; color: var(--muted); text-align: center; margin: 14px 0 0; }
+  .panel { margin-top: 14px; padding: 14px 16px; background: #F1EFE8; font-size: 15px; line-height: 1.5; }
   .panel .lab { font-size: 13px; color: #5F5E5A; margin: 0 0 8px; }
   .panel .txt { margin: 0; }
   .panel .copy {
     background: none; border: none; padding: 0; margin: 12px 0 0; cursor: pointer;
-    color: #2F639F; font-weight: 700; font-size: 15px; font-family: inherit; text-decoration: underline;
+    color: var(--blue); font-weight: 800; font-size: 15px; font-family: inherit; text-decoration: underline;
   }
-  .foot { border-top: 1px solid #E6E1D8; margin-top: 30px; padding-top: 20px; }
+
+  .closer {
+    margin: 30px 0 0; text-align: center; font-size: 22px; line-height: 1.25; font-weight: 800; font-style: italic; color: var(--navy);
+  }
+  .closer span { display: block; color: var(--red); }
+
+  .foot { border-top: 1px solid var(--line); margin-top: 30px; padding-top: 20px; }
   .foot p { font-size: 13px; line-height: 1.7; margin: 0 0 10px; }
-  .foot strong { color: #2F639F; }
-  .hh { font-size: 14px; color: #5A5A5A; }
-  @media (max-width: 620px) { .pad { padding: 22px 22px 34px; } h1 { font-size: 22px; } p, .deals li { font-size: 16px; } }
+  .foot strong { color: var(--blue); }
+  .foot a { color: var(--blue); font-weight: 800; }
+
+  @media (min-width: 480px) {
+    h1 { font-size: 48px; }
+    .pad { padding: 30px 24px 40px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .star, .badge, .badge .ring { animation: none !important; }
+    .star { opacity: .6; }
+  }
 </style>
 </head>
 <body>
-<div class="card">
-  <div class="bar">
-    <a href="https://betelgeusehou.com"><img
+<div class="wrap">
+
+  <header class="sky">
+    <div class="stars" id="stars" aria-hidden="true"></div>
+
+    <a class="logo" href="https://betelgeusehou.com"><img
       src="https://d3k81ch9hvuctc.cloudfront.net/company/YAYzBx/images/37de632b-99cd-4784-9f68-3992d400c776.png"
-      alt="Betelgeuse Betelgeuse" width="240"></a>
-  </div>
+      alt="Betelgeuse Betelgeuse" width="200" height="61"></a>
 
-  <div class="pad">
+    <div class="badge-wrap" aria-hidden="true">
+      <svg class="badge" viewBox="0 0 150 150">
+        <defs>
+          <path id="circ" d="M75,75 m-56,0 a56,56 0 1,1 112,0 a56,56 0 1,1 -112,0"/>
+        </defs>
+        <circle cx="75" cy="75" r="72" fill="#E8421E"/>
+        <circle cx="75" cy="75" r="66" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="3 4"/>
+        <g class="ring">
+          <text fill="#fff" font-family="Asap, Arial, sans-serif" font-size="14" font-weight="800">
+            <textPath href="#circ" textLength="346" lengthAdjust="spacing">YOU'RE A REGULAR ★ YOU'RE A REGULAR ★ </textPath>
+          </text>
+        </g>
+        <circle cx="75" cy="75" r="38" fill="#fff"/>
+        <path fill="#E8421E" d="M75 47 l7.6 18.4 19.9 1.5 -15.2 12.9 4.7 19.4 -17-10.5 -17 10.5 4.7-19.4 -15.2-12.9 19.9-1.5z"/>
+      </svg>
+    </div>
+
+    <div class="kicker">Nov 4 &ndash; Nov 25 &middot; Both bars</div>
     <h1>Regular Appreciation Week</h1>
+    <p class="sub">It runs three weeks. You're a regular now. We checked.</p>
+    <div class="check"></div>
+  </header>
 
-    <p>Cheap drinks for the people who keep showing up. Both bars, through Wednesday Nov 25.</p>
+  <main class="pad">
+    <p class="lead"><span class="hey">We know October was crazy.</span> Thank you for bearing with us. We want to show our appreciation to you.</p>
 
-    <ul class="deals">
-      <li><span class="day">Monday</span><span class="what"><span class="price">$5</span> espresso martini</span></li>
-      <li><span class="day">Tuesday</span><span class="what"><span class="price">$6</span> Pickletini</span></li>
-      <li><span class="day">Wednesday</span><span class="what"><span class="price">$6</span> Black Lemon Drop</span></li>
-      <li><span class="day">Thursday</span><span class="what"><span class="price">Half-price</span> frozen drinks</span></li>
+    <ul class="days">
+      <li class="day">
+        <div class="photo">
+          <img src="img/hero_MON_avery.jpg" alt="Espresso martini" width="1080" height="1350">
+          <span class="tag">Monday</span>
+        </div>
+        <div class="deal">
+          <span class="price">$5</span>
+          <span class="what">Espresso martini</span>
+          <span class="plus"><b>$10</b> large pepperoni<br>Washington only</span>
+        </div>
+      </li>
+      <li class="day">
+        <div class="photo">
+          <img src="img/hero_TUE.jpg" alt="Pickletini" width="1080" height="1350">
+          <span class="tag">Tuesday</span>
+        </div>
+        <div class="deal">
+          <span class="price">$6</span>
+          <span class="what">Pickletini</span>
+        </div>
+      </li>
+      <li class="day">
+        <div class="photo">
+          <img src="img/hero_WED.jpg" alt="Black Lemon Drop" width="1080" height="1350">
+          <span class="tag">Wednesday</span>
+        </div>
+        <div class="deal">
+          <span class="price">$6</span>
+          <span class="what">Black Lemon Drop</span>
+        </div>
+      </li>
+      <li class="day">
+        <div class="photo">
+          <img src="img/hero_THU.jpg" alt="Frozen drink" width="1080" height="1350">
+          <span class="tag">Thursday</span>
+        </div>
+        <div class="deal">
+          <span class="price word">Half price</span>
+          <span class="what">Frozen drinks</span>
+        </div>
+      </li>
     </ul>
 
-    <p>This is a very limited time. It'll be gone before you know it.</p>
+    <div class="every">
+      <span class="x2">2&times;</span>
+      <span class="t"><b>Every day</b>Double loyalty points.</span>
+    </div>
 
-    <p>Becoming a regular takes one text.</p>
+    <p class="fine">Loyalty members only. Wednesday Nov 4 through Wednesday Nov 25, both bars unless noted. Not a member yet? Fix that right here.</p>
 
     <div class="opt">
       <a class="join" id="join" href="sms:+18333040735">Text JOIN to become a regular</a>
       <div class="slot"></div>
     </div>
-    <p class="small">$5 on your signup. Deals are for loyalty members.</p>
+    <p class="small">$5 on your signup.</p>
+
+    <p class="closer">This is a very limited time.<span>It'll be gone before you know it.</span></p>
 
     <div class="foot">
-      <p class="hh">Happy hour 4 to 6 daily, both stores.</p>
       <p><strong>Montrose</strong><br>4500 Montrose Blvd, Houston, TX 77006</p>
       <p><strong>Washington</strong><br>2101 Washington Ave, Houston, TX 77007</p>
       <p>713.640.5220 &middot; <a href="https://betelgeusehou.com">betelgeusehou.com</a></p>
     </div>
-  </div>
+  </main>
 </div>
 
 <script>
+// Drifting stars in the hero. Purely decorative.
+(function () {
+  var box = document.getElementById('stars');
+  if (!box) return;
+  var n = window.innerWidth < 480 ? 22 : 32;
+  for (var i = 0; i < n; i++) {
+    var s = document.createElement('span');
+    s.className = 'star' + (Math.random() < 0.18 ? ' r' : '');
+    s.textContent = Math.random() < 0.35 ? '★' : '✦';
+    var size = 6 + Math.random() * 12;
+    s.style.fontSize = size.toFixed(1) + 'px';
+    s.style.left = (Math.random() * 105).toFixed(1) + '%';
+    s.style.top = (Math.random() * 100 - 10).toFixed(1) + '%';
+    var d = 14 + Math.random() * 16, t = 1.6 + Math.random() * 2.6;
+    s.style.animationDuration = d.toFixed(1) + 's, ' + t.toFixed(1) + 's';
+    s.style.animationDelay = (-Math.random() * d).toFixed(1) + 's, ' + (-Math.random() * t).toFixed(1) + 's';
+    box.appendChild(s);
+  }
+})();
+
 (function () {
   var NUMBER = '+18333040735';
   var DISPLAY = '833-304-0735';
