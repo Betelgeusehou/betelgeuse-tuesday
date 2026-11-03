@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Burger Tuesday</title>
+<meta name="description" content="Tuesday at Betelgeuse Washington: 2 burgers + 2 tall boys for $20, dine-in. Text a friend who owes you one.">
+<meta name="theme-color" content="#2F639F">
+<meta property="og:title" content="You owe me a burger">
+<meta property="og:description" content="Tuesday at Betelgeuse Washington. 2 burgers + 2 tall boys, $20.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://burger.betelgeusehou.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;700&display=swap">
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: #FAF6EF; color: #2B2B2B;
+    font-family: 'Asap','Helvetica Neue',Helvetica,Arial,sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  .card { max-width: 600px; margin: 0 auto; background: #FFFFFF; min-height: 100vh; }
+  .bar { background: #2F639F; padding: 20px 16px; text-align: center; }
+  .bar img { display: inline-block; width: 240px; max-width: 78%; height: auto; border: 0; }
+  .pad { padding: 30px 24px 40px; }
+  h1 { font-size: 24px; line-height: 1.25; color: #2F639F; margin: 0 0 18px; font-weight: 700; }
+  p { font-size: 17px; line-height: 1.55; margin: 0 0 18px; }
+  a { color: #2F639F; font-weight: 700; }
+  .deals { list-style: none; margin: 0 0 24px; padding: 0; border-top: 1px solid #E6E1D8; }
+  .deals li { display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+    padding: 14px 0; border-bottom: 1px solid #E6E1D8; font-size: 17px; line-height: 1.4; }
+  .deals .day { color: #2F639F; font-weight: 700; flex: 0 0 auto; }
+  .deals .what { text-align: right; }
+  .deals .price { color: #E8421E; font-weight: 700; }
+  .msg { background: #F1EFE8; padding: 14px 16px; margin: 0 0 18px; font-size: 16px; line-height: 1.5; }
+  .msg .lab { display: block; font-size: 13px; color: #5F5E5A; margin-bottom: 6px; }
+  .btn {
+    display: block; width: 100%; text-align: center; font-size: 19px; font-weight: 700;
+    padding: 20px 20px; border: 2px solid #E8421E; cursor: pointer; text-decoration: none;
+    font-family: inherit; border-radius: 0; -webkit-tap-highlight-color: transparent;
+    background: #E8421E; color: #FFFFFF;
+    transition: transform .08s ease, opacity .12s ease;
+  }
+  .btn:active { transform: scale(.985); }
+  .btn.ghost { background: #FFFFFF; color: #2F639F; border-color: #2F639F; font-size: 17px; padding: 16px 20px; }
+  .small { font-size: 14px; color: #5A5A5A; text-align: center; margin: 12px 0 0; }
+  .panel { margin-top: 10px; padding: 14px 16px; background: #F1EFE8; font-size: 15px; line-height: 1.5; }
+  .panel .lab { font-size: 13px; color: #5F5E5A; margin: 0 0 8px; }
+  .panel .txt { margin: 0; }
+  .panel .copy {
+    background: none; border: none; padding: 0; margin: 12px 0 0; cursor: pointer;
+    color: #2F639F; font-weight: 700; font-size: 15px; font-family: inherit; text-decoration: underline;
+  }
+  .sep { border-top: 1px solid #E6E1D8; margin: 30px 0 22px; }
+  .foot { border-top: 1px solid #E6E1D8; margin-top: 30px; padding-top: 20px; }
+  .foot p { font-size: 13px; line-height: 1.7; margin: 0 0 10px; }
+  .foot strong { color: #2F639F; }
+  @media (max-width: 620px) { .pad { padding: 22px 22px 34px; } h1 { font-size: 22px; } p, .deals li { font-size: 16px; } }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="bar">
+    <a href="https://betelgeusehou.com"><img
+      src="https://d3k81ch9hvuctc.cloudfront.net/company/YAYzBx/images/37de632b-99cd-4784-9f68-3992d400c776.png"
+      alt="Betelgeuse Betelgeuse" width="240"></a>
+  </div>
+
+  <div class="pad">
+    <h1>Somebody owes you a burger</h1>
+
+    <ul class="deals">
+      <li><span class="day">Tuesday</span><span class="what">2 burgers + 2 tall boys <span class="price">$20</span></span></li>
+      <li><span class="day">Where</span><span class="what">Betelgeuse Washington, dine-in</span></li>
+    </ul>
+
+    <p>Tap the button and pick who's paying. The text is already written.</p>
+
+    <div class="msg"><span class="lab">The text they get:</span><span id="preview"></span></div>
+
+    <div class="opt">
+      <a class="btn" id="friend" href="sms:">Text a friend</a>
+      <div class="slot" id="friendSlot"></div>
+    </div>
+
+    <div class="sep"></div>
+
+    <p>One favor: Betelgeuse is a lot more fun when you're a loyalty member. $5 on signup.</p>
+    <div class="opt">
+      <a class="btn ghost" id="join" href="sms:+18333040735">Text JOIN</a>
+      <div class="slot" id="joinSlot"></div>
+    </div>
+
+    <div class="foot">
+      <p><strong>Washington</strong><br>2101 Washington Ave, Houston, TX 77007</p>
+      <p>713.640.5220 &middot; <a href="https://betelgeusehou.com">betelgeusehou.com</a></p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var FRIEND_TEXT = 'You owe me a burger. Tuesday at Betelgeuse Washington, 2 burgers + 2 tall boys $20';
+  var JOIN_NUMBER = '+18333040735';
+  var JOIN_DISPLAY = '833-304-0735';
+
+  var ua = navigator.userAgent;
+  var isIOS = /iPhone|iPad|iPod/i.test(ua);
+  var isMobile = /Android|iPhone|iPad|iPod/i.test(ua);
+  // iOS wants "&body=", Android wants "?body=".
+  var sep = isIOS ? '&' : '?';
+
+  // No recipient: the messaging app opens with the body filled and the "To" field empty.
+  var friendHref = 'sms:' + sep + 'body=' + encodeURIComponent(FRIEND_TEXT);
+  var joinHref = 'sms:' + JOIN_NUMBER + sep + 'body=' + encodeURIComponent('JOIN');
+
+  document.getElementById('preview').textContent = FRIEND_TEXT;
+
+  function selectNode(node) {
+    try {
+      var r = document.createRange();
+      r.selectNodeContents(node);
+      var s = window.getSelection();
+      s.removeAllRanges();
+      s.addRange(r);
+    } catch (e) {}
+  }
+
+  function panel(slot, labText, bodyHtml, copyLabel, copyValue) {
+    if (slot.firstChild) return;
+    var box = document.createElement('div');
+    box.className = 'panel';
+    var lab = document.createElement('p');
+    lab.className = 'lab';
+    lab.textContent = labText;
+    var txt = document.createElement('p');
+    txt.className = 'txt';
+    txt.innerHTML = bodyHtml;
+    var copy = document.createElement('button');
+    copy.className = 'copy';
+    copy.type = 'button';
+    copy.textContent = copyLabel;
+    copy.addEventListener('click', function () {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(copyValue).then(
+          function () { copy.textContent = 'Copied'; },
+          function () { selectNode(txt); }
+        );
+      } else { selectNode(txt); }
+    });
+    box.appendChild(lab); box.appendChild(txt); box.appendChild(copy);
+    slot.appendChild(box);
+  }
+
+  function wire(id, href, showPanel) {
+    var btn = document.getElementById(id);
+    btn.setAttribute('href', href);
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (isMobile) {
+        window.location.href = href;
+        window.setTimeout(function () {
+          if (document.visibilityState === 'visible') showPanel();
+        }, 1200);
+        return;
+      }
+      showPanel();
+    });
+  }
+
+  wire('friend', friendHref, function () {
+    var t = FRIEND_TEXT.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+    panel(document.getElementById('friendSlot'), 'Copy this and send it to a friend:', t, 'Copy the text', FRIEND_TEXT);
+  });
+  wire('join', joinHref, function () {
+    panel(document.getElementById('joinSlot'), 'From your phone, text this:',
+      '<strong>JOIN</strong> to <strong>' + JOIN_DISPLAY + '</strong>', 'Copy the number', JOIN_DISPLAY);
+  });
+})();
+</script>
+</body>
+</html>

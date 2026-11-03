@@ -4,7 +4,7 @@
   "private": true,
   "description": "Tuesday burger deal share page for tuesday.betelgeusehou.com",
   "scripts": {
-    "start": "serve . --listen $PORT --single --no-clipboard"
+    "start": "serve . --listen $PORT --no-clipboard"
   },
   "dependencies": {
     "serve": "14.2.4"
