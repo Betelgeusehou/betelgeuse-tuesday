@@ -43,6 +43,8 @@
   }
   .sky .logo { position: relative; z-index: 2; display: inline-block; }
   .sky .logo img { width: 200px; max-width: 64vw; height: auto; margin: 0 auto; }
+  .sky .hero-logo { margin: 26px auto 18px; animation: stamp .7s cubic-bezier(.2,1.6,.4,1) .2s both; }
+  .sky .hero-logo img { width: 300px; max-width: 82vw; }
   .stars { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
   .star {
     position: absolute; color: #fff; line-height: 1; opacity: 0;
@@ -61,8 +63,8 @@
   .badge-wrap:active .badge { transform: scale(.94); }
   @keyframes spin { to { transform: rotate(360deg); } }
   @keyframes stamp {
-    from { transform: scale(2.2) rotate(-25deg); opacity: 0; }
-    to   { transform: scale(1) rotate(-8deg); opacity: 1; }
+    from { transform: scale(1.6); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
   }
 
   .kicker {
@@ -147,7 +149,7 @@
     .pad { padding: 30px 24px 40px; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .star, .badge, .badge .ring { animation: none !important; }
+    .star, .hero-logo { animation: none !important; }
     .star { opacity: .6; }
   }
 </style>
@@ -158,30 +160,13 @@
   <header class="sky">
     <div class="stars" id="stars" aria-hidden="true"></div>
 
-    <a class="logo" href="https://betelgeusehou.com"><img
+    <a class="logo hero-logo" href="https://betelgeusehou.com"><img
       src="https://d3k81ch9hvuctc.cloudfront.net/company/YAYzBx/images/37de632b-99cd-4784-9f68-3992d400c776.png"
-      alt="Betelgeuse Betelgeuse" width="200" height="61"></a>
-
-    <div class="badge-wrap" aria-hidden="true">
-      <svg class="badge" viewBox="0 0 150 150">
-        <defs>
-          <path id="circ" d="M75,75 m-56,0 a56,56 0 1,1 112,0 a56,56 0 1,1 -112,0"/>
-        </defs>
-        <circle cx="75" cy="75" r="72" fill="#E8421E"/>
-        <circle cx="75" cy="75" r="66" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="3 4"/>
-        <g class="ring">
-          <text fill="#fff" font-family="Asap, Arial, sans-serif" font-size="14" font-weight="800">
-            <textPath href="#circ" textLength="346" lengthAdjust="spacing">YOU'RE A REGULAR ★ YOU'RE A REGULAR ★ </textPath>
-          </text>
-        </g>
-        <circle cx="75" cy="75" r="38" fill="#fff"/>
-        <path fill="#E8421E" d="M75 47 l7.6 18.4 19.9 1.5 -15.2 12.9 4.7 19.4 -17-10.5 -17 10.5 4.7-19.4 -15.2-12.9 19.9-1.5z"/>
-      </svg>
-    </div>
+      alt="Betelgeuse Betelgeuse" width="300" height="92"></a>
 
     <div class="kicker">Nov 9 &ndash; Nov 25 &middot; Both bars</div>
     <h1>Regular Appreciation Week</h1>
-    <p class="sub">It runs three weeks. You're a regular now. We checked.</p>
+    <p class="sub">You're a regular now. We checked.</p>
     <div class="check"></div>
   </header>
 
@@ -198,7 +183,7 @@
           <span class="price">$5</span>
           <span class="what">Espresso martini</span>
           <span class="desc">Vodka, cold brew concentrate, coffee liqueur, simple, vanilla foam</span>
-          <span class="plus"><b>$10</b> large pepperoni<br>Washington only</span>
+          <span class="plus"><b>$10</b> large pepperoni at Washington<br><b>$35</b> large pizza + a bottle of wine at Montrose</span>
         </div>
       </li>
       <li class="day">
@@ -210,6 +195,7 @@
           <span class="price">$6</span>
           <span class="what">Pickletini</span>
           <span class="desc">Big Giant Ridiculous vodka and kosher dill pickle juice martini, with pickles on the side</span>
+          <span class="plus">2 burgers + 2 tall boys <b>$20</b> at Washington</span>
         </div>
       </li>
       <li class="day">
@@ -221,6 +207,7 @@
           <span class="price">$6</span>
           <span class="what">Black Lemon Drop</span>
           <span class="desc">Vodka, lemon vodka, limoncello, lemon, activated charcoal, edible glitter, black sugar</span>
+          <span class="plus"><b>Half off</b> large pizzas at Montrose</span>
         </div>
       </li>
       <li class="day">
@@ -232,6 +219,7 @@
           <span class="price word">Half price</span>
           <span class="what">Frozen drinks</span>
           <span class="desc">All your favorites</span>
+          <span class="plus">Wings + a 32 oz Saint Arnold draft <b>$16</b> at Montrose</span>
         </div>
       </li>
     </ul>

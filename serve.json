@@ -1,5 +1,5 @@
 {
   "rewrites": [
-    { "source": "!{join,burger,regular,half}", "destination": "/index.html" }
+    { "source": "!{join,burger,regular,half,friend}", "destination": "/index.html" }
   ]
 }
